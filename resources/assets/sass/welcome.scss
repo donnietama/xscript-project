@@ -1,0 +1,291 @@
+// Variables
+@import 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.btn, .btn:focus, .btn:active:focus, .btn.active:focus, .btn:hover {
+    outline: none !important;
+    outline-style: none !important;
+    -webkit-tap-highlight-color: transparent;
+  } 
+  .navbar-custom {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: $white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    .navbar-brand {
+      border-right: 2px solid $crystalic-non-transparent;
+      padding-right: 15px;
+    }
+    .navbar-brand:hover {
+      color: $crystalic-non-transparent;
+    }
+    .navbar-brand, .navbar-collapse >
+    .navbar-nav > .nav-item > .nav-link,
+    .navbar-toggler {
+      color: $crystalic-non-transparent;
+    }
+  }
+  .btn-custom {
+    background-color: $crystalic-non-transparent;
+    color: $white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border-right: none;
+  }
+  .btn-outline-custom {
+    border: 1px solid $crystalic-non-transparent;
+    color: $crystalic-non-transparent;
+    border-radius: 30px;
+    padding: 10px 20px;
+  }
+  
+  .wrapper {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .welcome-banner-wrapper {
+    background: linear-gradient(90deg, $crystalic-gradient), url('../images/banner_001.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    .welcome-banner-context {
+      color: $white;
+    }
+    .btn-outline-custom {
+      border: 1px solid $white;
+      color: $white;
+    }
+    .btn-outline-custom:hover {
+      color: $crystalic-non-transparent;
+    }
+  }
+  .learning-method {
+    background-color: $barely-white;
+    text-align: center;
+    .learning-method-title {
+      color: $crystalic-non-transparent;
+    }
+    .context-title {
+      color: $crystalic-non-transparent;
+    }
+    i {
+      font-size: 50px;
+      color: $crystalic;
+    }
+  }
+  .learning-method-title::after {
+    content: '';
+    height: 2px;
+    width: 70px;
+    background-color: $crystalic-non-transparent;
+    position: absolute;
+    top: 10;
+    transform: translate(-50%);
+  }
+  .invitation {
+    background: linear-gradient(90deg, $crystalic-gradient), url('../images/banner_001.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    .learning-method-title {
+      padding-top: 25px;
+      text-align: center;
+    }
+    .invitation-context {
+      color: $white;
+    }
+  }
+  .list-item-social {
+    text-align: center;
+    a {
+      padding: 10px;
+      font-size: 35px;
+      color: $crystalic-non-transparent;
+      text-decoration: none;
+    }
+  }
+  
+  // Extra small devices (portrait phones, less than 576px)
+  @include media-breakpoint-only(xs) {
+    .navbar-custom {
+      .navbar-brand {
+        border-right: none;
+      }
+    }
+    .welcome-banner-wrapper {
+      height: 750px;
+      .welcome-banner-inner {
+        padding-top: 350px;
+      }
+    }
+    .company-vision {
+      padding-top: 25px;
+    }
+    .learning-method {
+      background-color: $barely-white;
+      text-align: center;
+      padding-bottom: 50px;
+      i {
+        font-size: 50px;
+        color: $crystalic-non-transparent;
+      }
+    }
+    .invitation {
+      background: linear-gradient(90deg, $crystalic-gradient), url('../images/banner_001.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      .invitation-inner {
+        padding-top: 50px;
+        padding-bottom: 25px;
+        .invitation-context {
+          color: $white;
+        }
+      }
+    }
+  }
+  
+  // Small devices (landscape phones, 576px and up)
+  @include media-breakpoint-only(sm) {
+    .navbar-custom {
+      .navbar-brand {
+        border-right: none;
+      }
+    }
+    .welcome-banner-wrapper {
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
+    .company-vision, .invitation {
+      padding: 50px;
+    }
+    .learning-method {
+      padding: 0px 50px 50px 50px;
+    }
+  }
+  
+  // Medium devices (tablets, 768px and up)
+  @include media-breakpoint-only(md) {
+    .navbar-custom {
+      .navbar-brand {
+        border-right: none;
+      }
+    }
+    .welcome-banner-wrapper {
+      padding: 150px 100px 100px 100px;
+    }
+    .company-vision, .invitation {
+      padding: 100px;
+    }
+    .learning-method {
+      padding: 50px;
+      .learning-method-context {
+        background-color: $white;
+        height: 400px;
+        padding: 25px 50px;
+        border-radius: 5px;
+        text-align: left;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+      }
+    }
+    .learning-method-context:nth-child(odd) {
+      margin-bottom: 25px;
+    }
+    .learning-method-context:nth-child(even) {
+      margin-top: 25px;
+    }
+  }
+  
+  // Large devices (desktops, 992px and up)
+  @include media-breakpoint-only(lg) {
+    .welcome-banner-wrapper {
+      padding: 150px 100px 100px 100px;
+    }
+    .company-vision, .invitation {
+      padding: 100px;
+    }
+    .learning-method {
+      .learning-method-context {
+        background-color: $white;
+        height: 500px;
+        padding: 25px 25px;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+      }
+      .learning-method-inner:nth-child(n+2) {
+        padding-left: 0px;
+      }
+      .learning-method-context:nth-child(odd) {
+        margin-bottom: 25px;
+      }
+      .learning-method-context:nth-child(even) {
+        margin-top: 25px;
+      }
+    }
+  }
+  
+  
+  // Extra large devices (large desktops, 1200px and up)
+  @include media-breakpoint-only(xl) {
+    .btn-outline-custom {
+      margin-left: 5px;
+    }
+    .btn-custom:hover, .btn-outline-custom:hover {
+      background-color: $white;
+      color: $crystalic-non-transparent;
+    }
+    .navbar-custom {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      .btn-custom, .btn-outline-custom {
+        padding: 5px 25px;
+      }
+      .btn-custom {
+        margin-right: 0;
+        background-color: $crystalic;
+        color: $white;
+      }
+      .btn-outline-custom {
+        margin-right: 5px;
+      }
+    }
+    .navbar-custom, .welcome-banner-wrapper, .company-vision,
+    .learning-method, .invitation {
+      font-size: $font-size-lg;
+    }
+    .navbar-custom, .company-vision, .learning-method, .invitation {
+      font-weight: 300;
+    }
+    .welcome-banner-wrapper {
+      padding: 350px 100px 100px 100px;
+      font-weight: 100;
+      height: 800px;
+      transition: all fade-in .5;
+      .btn-custom, .btn-outline-custom {
+        padding: 10px 75px;
+      }
+    }
+    .company-vision, .invitation {
+      padding: 100px;
+    }
+    .learning-method {
+      .learning-method-context {
+        background-color: $white;
+        height: 550px;
+        padding: 25px 25px;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+      }
+      .learning-method-inner:nth-child(n+2) {
+        padding-left: 0px;
+      }
+      .learning-method-context:nth-child(odd) {
+        margin-bottom: 25px;
+      }
+      .learning-method-context:nth-child(even) {
+        margin-top: 25px;
+      }
+    }
+  }
+  
