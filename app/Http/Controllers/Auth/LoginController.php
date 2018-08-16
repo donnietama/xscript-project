@@ -89,7 +89,7 @@ class LoginController extends Controller
                 'email'         => !empty($user->email) ? $user->email : null,
                 'provider'      => $provider,
                 'provider_id'   => $user->id,
-                'avatar'        => !empty($user->avatar) ? $user->avatar : null,
+                'avatar'        => !empty($user->avatar_original) ? $user->avatar_original : null,
             ]);
             return $data;
         }
