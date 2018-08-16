@@ -18,6 +18,25 @@ window.$ = $;
 window.jQuery = $;
 
 /**
+ * Import TinyMCE.
+ */
+
+import tinymce from 'tinymce/tinymce'
+import 'tinymce/themes/modern/theme'
+
+// Plugins
+import 'tinymce/plugins/paste/plugin'
+import 'tinymce/plugins/link/plugin'
+import 'tinymce/plugins/autoresize/plugin'
+
+// Initialize
+tinymce.init({
+  selector: '#tinymce-editor',
+  plugins: ['paste', 'link', 'autoresize'],
+  branding: false,
+})
+
+/**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
