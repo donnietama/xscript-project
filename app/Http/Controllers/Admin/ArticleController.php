@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Admin\Article;
+use App\Admin\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -76,8 +77,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        $articles = Article::findOrFail($article);
-        return $articles;
+        $articles = Article::with('categories')->findOrFail($article->id);
+        return view('admin.articles.show', compact('articles'));
     }
 
     /**
@@ -88,7 +89,9 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return view('admin.articles.edit');
+        $article      = Article::with('categories')->findOrFail($article->id);
+        $listCategory = Category::all();
+        return view('admin.articles.edit', compact('article', 'listCategory'));
     }
 
     /**

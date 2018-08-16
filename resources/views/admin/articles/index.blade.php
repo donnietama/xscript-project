@@ -53,13 +53,13 @@
                               {{ $article->categories->first()->name }}
                             </td>
                             <td class="td-actions text-center">
-                                <button type="button" rel="tooltip" class="btn btn-info btn-round">
+                                <a href={{ url('admin/articles/'.$article->id) }} rel="tooltip" class="btn btn-info btn-round">
                                     <i class="material-icons">open_in_new</i>
-                                </button>
-                                <button type="button" rel="tooltip" class="btn btn-success btn-round">
+                                </a>
+                                <button rel="tooltip" class="btn btn-success btn-round">
                                     <i class="material-icons">edit</i>
                                 </button>
-                                <button type="button" rel="tooltip" class="btn btn-danger btn-round">
+                                <button rel="tooltip" class="btn btn-danger btn-round">
                                     <i class="material-icons">close</i>
                                 </button>
                             </td>

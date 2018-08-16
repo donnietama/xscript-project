@@ -11,7 +11,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Admin\Category::class, 50)->create()->each(function ($u) {
+        factory(App\Admin\Category::class, 6)->create()->each(function ($u) {
             $u->save();
         });
         return $this->command->info('Categories table seeded.');
