@@ -41,7 +41,9 @@
                     </div>
                     <div class="card-body">
                         <div id="typography">
-                            Kontent
+                            <textarea name="content" id="tinymce-editor" cols="30" rows="10">
+                                {{ $article->content }}
+                            </textarea>
                         </div>
                     </div>
                 </form>

@@ -22,7 +22,9 @@
 
 <body class="">
 
-    @yield('content')
+    <div id="app">
+        @yield('content')
+    </div>
     
 <!--   Core JS Files   -->
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
@@ -30,8 +32,6 @@
 <script src="{{ asset('js/popper.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/bootstrap-material-design.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/perfect-scrollbar.jquery.min.js') }}"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Chartist JS -->
 <script src="{{ asset('js/chartist.min.js') }}"></script>
 <!--  Notifications Plugin    -->

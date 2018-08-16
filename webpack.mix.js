@@ -30,3 +30,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
     // Plugins
     .js('resources/assets/js/material-dashboard/plugins/bootstrap-notify.js', 'public/js')
     .js('resources/assets/js/material-dashboard/material-dashboard.min.js', 'public/js')
+
+
+/**
+ * Copy the TinyMCE skins.
+ */
+mix.copy('node_modules/tinymce/skins', 'public/skins')
