@@ -7,14 +7,14 @@
         <div class="content">
             <div class="container-fluid">
                 <form class="card" method="POST">
-                    <div class="card-header card-header-info py-4">
+                    <div class="card-header card-header-primary py-4">
                         <div class="card-title">
                             <div class="form-group pb-4">
-                                <label for="exampleInput1" class="bmd-label-floating text-white">Title</label>
-                                <input type="text" class="form-control text-white" id="exampleInput1" value="{{ $article->title }}">
+                                <label for="exampleInput1" class="text-dark bg-warning rounded px-2 py-1">Title</label>
+                                <input type="text" class="form-control text-white py-4" id="exampleInput1" value="{{ $article->title }}">
                             </div>
                             <div class="form-group pb-4">
-                                <label for="excerpt" class="text-white">Excerpt</label>
+                                <label for="excerpt" class="text-dark bg-warning rounded px-2 py-1">Excerpt</label>
                                 <textarea class="form-control text-white pt-4" id="excerpt" rows="3">{{ $article->excerpt }}</textarea>
                             </div>
                         </div>
