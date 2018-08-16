@@ -18,6 +18,7 @@
     <!-- CSS Files -->
     <link href="{{ asset('css/material-dashboard.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/demo.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/prism.css') }}" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -36,6 +37,8 @@
 <script src="{{ asset('js/bootstrap-notify.js') }}"></script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="{{ asset('js/material-dashboard.min.js') }}" type="text/javascript"></script>
+<!-- Prism Code Viewer -->
+<script src="{{ asset('js/prism.js') }}" type="text/javascript"></script>
 <script>
   $(document).ready(function() {
     // Javascript method's body can be found in assets/js/demos.js

@@ -37,8 +37,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 | documentation: https://laravel.com/docs/5.6/routing;
 |
 */
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::get('/', 'Admin\DashboardController@index')->name('admin.dashboard');
 
@@ -68,7 +71,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/', 'Admin\CategoryController@store');
         Route::get('/create', 'Admin\CategoryController@create')->name('admin.categories.create');
         Route::get('/{category}', 'Admin\CategoryController@show');
-        Route::get('/{category}/edit', 'Admin\CatgoryController@edit');
+        Route::get('/{category}/edit', 'Admin\CategoryController@edit');
         Route::patch('/{category}', 'Admin\CategoryController@update');
         Route::delete('/{category}', 'Admin\CategoryController@destroy');
 

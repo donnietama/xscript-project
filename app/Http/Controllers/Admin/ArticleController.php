@@ -110,24 +110,24 @@ class ArticleController extends Controller
          * Jangan males!
          * 
          */
-        $articles = Article::findOrFail($article);
+        $articles = Article::findOrFail($article->id);
 
         $validator = Validator::make($request->all(), [
             'title'     => 'string|required|max:191',
             'excerpt'   => 'string|required|max:300',
             'content'   => 'string|required',
             'category'  => 'numeric|required',
-            'published' => 'boolean|required',
+            'status' => 'boolean|required',
             'keywords'  => 'string|required',
             'meta_desc' => 'string|required'
         ]);
 
         if ($validator->fails()) {
-            return response()->json($validator);
+            return redirect()->back()->withErrors($validator);
         }
 
-        $articles->save($request->all());
-        return $articles;
+        $articles->fill($request->all())->save();
+        return redirect('/admin/articles/'.$article->id);
     }
 
     /**

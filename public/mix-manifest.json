@@ -5,7 +5,10 @@
     "/css/material-dashboard.css": "/css/material-dashboard.css",
     "/js/bootstrap-material-design.min.js": "/js/bootstrap-material-design.min.js",
     "/js/jquery.min.js": "/js/jquery.min.js",
+    "/js/prism.js": "/js/prism.js",
     "/js/bootstrap-notify.js": "/js/bootstrap-notify.js",
     "/js/popper.min.js": "/js/popper.min.js",
-    "/js/material-dashboard.min.js": "/js/material-dashboard.min.js"
+    "/js/material-dashboard.min.js": "/js/material-dashboard.min.js",
+    "/css/prism.css": "/css/prism.css",
+    "/js/plugins/codesample/css/prism.css": "/js/plugins/codesample/css/prism.css"
 }

@@ -21,7 +21,7 @@
                     </div>
                     <div class="card-body">
                         <div id="typography">
-                            {{ $articles->content }}
+                            {!! $articles->content !!}
                         </div>
                     </div>
                 </div>

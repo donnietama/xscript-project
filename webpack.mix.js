@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+let mix = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -31,8 +31,13 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .js('resources/assets/js/material-dashboard/plugins/bootstrap-notify.js', 'public/js')
     .js('resources/assets/js/material-dashboard/material-dashboard.min.js', 'public/js')
 
+    // Plugins -> codesample -> prism
+    .js('resources/assets/js/prism.js', 'public/js')
+    .styles('resources/assets/css/prism.css', 'public/css/prism.css')
+    
 /**
  * Copy TinyMCE skins ke folder:
  * path: public/js/skins.
  */
-mix.copy('node_modules/tinymce/skins', 'public/js/skins');
+mix.copy('node_modules/tinymce/skins', 'public/js/skins')
+   .copy('node_modules/tinymce/plugins/codesample/css/prism.css', 'public/js/plugins/codesample/css')
