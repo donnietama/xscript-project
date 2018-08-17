@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/welcome.css": "/css/welcome.css",
     "/css/app.css": "/css/app.css",
+    "/css/admin-style.css": "/css/admin-style.css",
     "/css/material-dashboard.css": "/css/material-dashboard.css",
     "/js/bootstrap-material-design.min.js": "/js/bootstrap-material-design.min.js",
     "/js/jquery.min.js": "/js/jquery.min.js",

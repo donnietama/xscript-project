@@ -24,7 +24,7 @@
                             <div class="input-group text-white">
                                 <span class="input-group-btn">
                                     <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-warning">
-                                        <i class="fa fa-picture-o"></i> Cover Image
+                                        <i class="fa fa-picture-o"></i>&nbsp;&nbsp;{{ !empty($article->cover) ? 'Change Cover' : 'Add Cover' }}
                                     </a>
                                 </span>
                                 <input name="cover" id="thumbnail" class="form-control text-white" type="text" value="{{ !empty($article->cover) ? $article->cover : null }}">

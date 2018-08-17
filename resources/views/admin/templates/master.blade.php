@@ -19,6 +19,7 @@
     <link href="{{ asset('css/material-dashboard.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/demo.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/prism.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin-style.css') }}" rel="stylesheet" />
 </head>
 
 <body class="">
