@@ -57,10 +57,10 @@
                               {{ $article->categories->first()->name }}
                             </td>
                             <td class="td-actions text-center">
-                                <a href={{ url("admin/articles/".$article->id) }} rel="tooltip" class="btn btn-info btn-round">
+                                <a href="{{ url('admin/articles/'.$article->id) }}" rel="tooltip" class="btn btn-info btn-round">
                                     <i class="material-icons">open_in_new</i>
                                 </a>
-                                <a href={{ url("admin/articles/".$article->id)."/edit" }} rel="tooltip" class="btn btn-success btn-round">
+                                <a href="{{ url('admin/articles/'.$article->id).'/edit' }}" rel="tooltip" class="btn btn-success btn-round">
                                     <i class="material-icons">edit</i>
                                 </a>
                                 <button rel="tooltip" class="btn btn-danger btn-round">

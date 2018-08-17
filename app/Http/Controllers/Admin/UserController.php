@@ -15,9 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $data = User::paginate(20);
+        $users = User::paginate(20);
         $count = User::count();
-        return view('admin.users.index', compact('data', 'count'));
+        return view('admin.users.index', compact('users', 'count'));
     }
 
     /**
@@ -28,8 +28,8 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        $data = User::findOrFail($user)->first();
-        return view('admin.users.show', compact('data'));
+        $users = User::findOrFail($user->id)->first();
+        return view('admin.users.show', compact('users'));
     }
 
     /**
@@ -40,7 +40,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $data = User::findOrFail($user)->first();
-        $data->destroy();
+        $users = User::findOrFail($user)->first();
+        $users->destroy();
     }
 }

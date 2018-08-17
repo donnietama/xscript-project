@@ -21,6 +21,13 @@ class CreateUsersTable extends Migration
             $table->string('provider')->nullable();
             $table->string('provider_id')->nullable();
             $table->text('avatar')->nullable();
+            $table->string('company')->nullable();
+            $table->text('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('country')->nullable();
+            $table->integer('postal')->nullable();
+            $table->text('about')->nullable();
+            $table->string('job')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

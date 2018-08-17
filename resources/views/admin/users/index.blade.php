@@ -33,7 +33,7 @@
                         </th>
                       </thead>
                       <tbody>
-                        @foreach ($data as $user)
+                        @foreach ($users as $user)
                         <tr>
                           <td>
                             {{ $user->id }}
@@ -48,9 +48,9 @@
                             {{ $user->provider }}
                           </td>
                           <td class="td-actions text-center">
-                            <button type="button" rel="tooltip" class="btn btn-info btn-round">
+                            <a href="{{ url('admin/users/'.$user->id) }}" rel="tooltip" class="btn btn-info btn-round">
                               <i class="material-icons">person</i>
-                            </button>
+                            </a>
                           </td>
                         </tr>
                         @endforeach
@@ -60,7 +60,7 @@
                 </div>
               </div>
             </div>
-            {{ $data->links() }}
+            {{ $users->links() }}
           </div>
         </div>
       </div>
