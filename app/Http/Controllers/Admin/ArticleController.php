@@ -18,7 +18,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles       = Article::with('categories')->paginate(25);
+        $articles       = Article::with('categories')->orderBy('id', 'desc')->paginate(25);
         $articleCounts  = Article::count();
         return view('admin.articles.index', compact('articles', 'articleCounts'));
     }
@@ -30,7 +30,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.articles.create');
+        $listCategory = Category::all();
+        return view('admin.articles.create', compact('listCategory'));
     }
 
     /**
@@ -52,21 +53,22 @@ class ArticleController extends Controller
          * 
          */
         $validator = Validator::make($request->all(), [
-            'title'     => 'string|required|max:191',
-            'excerpt'   => 'string|required|max:300',
-            'content'   => 'string|required',
-            'category'  => 'numeric|required',
-            'published' => 'boolean|required',
-            'keywords'  => 'string|required',
-            'meta_desc' => 'string|required'
+            'cover'         => 'string|nullable',
+            'title'         => 'string|required|max:191',
+            'excerpt'       => 'string|required|max:300',
+            'content'       => 'string|required',
+            'category_id'   => 'numeric|required',
+            'published'     => 'boolean|required',
+            'keywords'      => 'string|required',
+            'meta_desc'     => 'string|required'
         ]);
 
         if ($validator->fails()) {
-            return response()->json($validator);
+            return redirect('/admin/articles/create')->withErrors($validator);
         }
 
-        $articles = Article::create($request->all());
-        return $articles;
+        Article::create($request->all());
+        return redirect('/admin/articles/');
     }
 
     /**
@@ -113,14 +115,14 @@ class ArticleController extends Controller
         $articles = Article::findOrFail($article->id);
 
         $validator = Validator::make($request->all(), [
-            'cover'     => 'string|required',
-            'title'     => 'string|required|max:191',
-            'excerpt'   => 'string|required|max:300',
-            'content'   => 'string|required',
-            'category'  => 'numeric|required',
-            'status' => 'boolean|required',
-            'keywords'  => 'string|required',
-            'meta_desc' => 'string|required'
+            'cover'         => 'string|nullable',
+            'title'         => 'string|required|max:191',
+            'excerpt'       => 'string|required|max:300',
+            'content'       => 'string|required',
+            'category_id'   => 'numeric|required',
+            'published'     => 'boolean|required',
+            'keywords'      => 'string|required',
+            'meta_desc'     => 'string|required'
         ]);
 
         if ($validator->fails()) {

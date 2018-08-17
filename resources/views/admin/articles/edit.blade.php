@@ -6,6 +6,7 @@
         @include('admin.templates.layouts.navbar')
         <div class="content">
             <div class="container-fluid">
+                <a href={{ url("/admin/articles/".$article->id) }} class="btn btn-info">Back</a>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -18,7 +19,7 @@
                 <form class="card" method="POST" action="/admin/articles/{{ $article->id }}" enctype="multipart/form-data">
                     @method('PATCH')
                     @csrf
-                    <div class="card-header card-header-primary mb-5">
+                    <div class="card-header card-header-info mb-5">
                         <div class="card-category">
                             <h3 class="text-white pb-4">Article & SEO Configuration</h3>
                             <div class="input-group text-white">
@@ -31,8 +32,8 @@
                             </div>
                             <img id="holder" style="margin-top:15px;max-height:100px;">
                             <div class="form-group pb-4">
-                                <label for="status" class="text-dark bg-warning rounded px-2 py-1">Status</label>                            
-                                <select name="status" class="form-control text-white" id="status">
+                                <label for="published" class="text-dark bg-warning rounded px-2 py-1">Status</label>                            
+                                <select name="published" class="form-control text-white" id="published">
                                     <option value="1" class="text-dark" {{ $article->published === 1 ? 'selected' : null }}>Published</option>
                                     <option value="0" class="text-dark" {{ $article->published === 0 ? 'selected' : null }}>Draft</option>
                                 </select>
@@ -53,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-header card-header-primary py-4">
+                    <div class="card-header card-header-info py-4">
                         <div class="card-title">
                             <h3 class="text-white pb-4">Article Content</h3>
                             <div class="form-group pb-4">
@@ -73,7 +74,7 @@
                                         @foreach ($listCategory as $key => $category)
                                         <div class="col-md-4 pb-3">
                                             <label class="form-check-label text-white">
-                                                <input name="category" class="form-check-input" type="checkbox" value="{{ $category->id }}" {{ $category->id === $article->category_id ? "checked" : null }} >
+                                                <input name="category_id" class="form-check-input" type="checkbox" value="{{ $category->id }}" {{ $category->id === $article->category_id ? "checked" : null }} >
                                                 {{ $category->name }}
                                                 <span class="form-check-sign">
                                                     <span class="check border-white"></span>
@@ -95,7 +96,7 @@
                     </div>
                     <div class="row pb-4">
                         <div class="col-md-2 ml-auto">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-info">
                                 <i class="material-icons">update</i>
                                 update
                             </button>

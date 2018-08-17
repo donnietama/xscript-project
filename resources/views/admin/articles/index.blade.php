@@ -14,6 +14,9 @@
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-header card-header-primary">
+                    <a href="{{ route('admin.articles.create') }}" class="btn btn-info float-right">
+                      Add Article
+                    </a>
                     <h4 class="card-title ">Articles List</h4>
                     <p class="card-category">Articles found: {{ $articleCounts }}</p>
                   </div>
@@ -38,10 +41,11 @@
                           </th>
                         </thead>
                         <tbody>
+                          <?php $i = ($articles->currentpage()-1) * $articles->perpage() + 1; ?>
                           @foreach ($articles as $article)
                           <tr>
                             <td>
-                              {{ $article->id }}
+                              {{ $i++ }}
                             </td>
                             <td>
                               {{ $article->title }}
@@ -53,12 +57,12 @@
                               {{ $article->categories->first()->name }}
                             </td>
                             <td class="td-actions text-center">
-                                <a href={{ url('admin/articles/'.$article->id) }} rel="tooltip" class="btn btn-info btn-round">
+                                <a href={{ url("admin/articles/".$article->id) }} rel="tooltip" class="btn btn-info btn-round">
                                     <i class="material-icons">open_in_new</i>
                                 </a>
-                                <button rel="tooltip" class="btn btn-success btn-round">
+                                <a href={{ url("admin/articles/".$article->id)."/edit" }} rel="tooltip" class="btn btn-success btn-round">
                                     <i class="material-icons">edit</i>
-                                </button>
+                                </a>
                                 <button rel="tooltip" class="btn btn-danger btn-round">
                                     <i class="material-icons">close</i>
                                 </button>
