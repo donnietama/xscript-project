@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin\Article;
+use App\Admin\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $articles   = Article::orderBy('id', 'desc')->with('categories')->get();
+        $categories = Category::all();
+
+        return view('home', compact('articles', 'categories'));
     }
 }

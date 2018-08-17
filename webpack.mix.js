@@ -19,6 +19,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
      * Custom CSS.
      */
     .sass('resources/assets/sass/admin-style.scss', 'public/css')
+    .sass('resources/assets/sass/user-style.scss', 'public/css')
 
     /**
      * Material Dashboard Templating.
