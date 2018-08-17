@@ -19,7 +19,7 @@
                         <h3 class="card-title">{{ $articles->title }}</h3>
                         <p class="card-category">Tags: {{ $articles->categories->first()->name }}</p>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body p-5">
                         <div id="typography">
                             {!! $articles->content !!}
                         </div>

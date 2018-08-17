@@ -113,6 +113,7 @@ class ArticleController extends Controller
         $articles = Article::findOrFail($article->id);
 
         $validator = Validator::make($request->all(), [
+            'cover'     => 'string|required',
             'title'     => 'string|required|max:191',
             'excerpt'   => 'string|required|max:300',
             'content'   => 'string|required',

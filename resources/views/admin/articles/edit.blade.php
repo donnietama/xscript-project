@@ -15,11 +15,21 @@
                         </ul>
                     </div>
                 @endif
-                <form class="card" method="POST" action="/admin/articles/{{ $article->id }}">
+                <form class="card" method="POST" action="/admin/articles/{{ $article->id }}" enctype="multipart/form-data">
                     @method('PATCH')
                     @csrf
                     <div class="card-header card-header-primary mb-5">
                         <div class="card-category">
+                            <h3 class="text-white pb-4">Article & SEO Configuration</h3>
+                            <div class="input-group text-white">
+                                <span class="input-group-btn">
+                                    <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-warning">
+                                        <i class="fa fa-picture-o"></i> Cover Image
+                                    </a>
+                                </span>
+                                <input name="cover" id="thumbnail" class="form-control text-white" type="text" value="{{ !empty($article->cover) ? $article->cover : null }}">
+                            </div>
+                            <img id="holder" style="margin-top:15px;max-height:100px;">
                             <div class="form-group pb-4">
                                 <label for="status" class="text-dark bg-warning rounded px-2 py-1">Status</label>                            
                                 <select name="status" class="form-control text-white" id="status">
@@ -45,6 +55,7 @@
                     </div>
                     <div class="card-header card-header-primary py-4">
                         <div class="card-title">
+                            <h3 class="text-white pb-4">Article Content</h3>
                             <div class="form-group pb-4">
                                 <label for="exampleInput1" class="text-dark bg-warning rounded px-2 py-1">Title</label><br>
                                 <input name="title" type="text" class="form-control text-white py-4" id="exampleInput1" value="{{ $article->title }}">

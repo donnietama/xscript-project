@@ -39,11 +39,13 @@
 <script src="{{ asset('js/material-dashboard.min.js') }}" type="text/javascript"></script>
 <!-- Prism Code Viewer -->
 <script src="{{ asset('js/prism.js') }}" type="text/javascript"></script>
+<!-- Laravel Filemanager Stand Alone Button -->
+<script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
 <script>
   $(document).ready(function() {
     // Javascript method's body can be found in assets/js/demos.js
     md.initDashboardPageCharts();
-
+    $('#lfm').filemanager('file');
   });
 </script>
 </body>
