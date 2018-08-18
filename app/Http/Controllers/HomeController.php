@@ -25,9 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $articles   = Article::orderBy('id', 'desc')->with('categories')->get();
-        $categories = Category::all();
+        $categories = Category::orderBy('id', 'desc')->get();
 
-        return view('home', compact('articles', 'categories'));
+        return view('home', compact('categories'));
     }
 }

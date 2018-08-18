@@ -77,3 +77,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     });
 });
+
+/**
+ * Public routes.
+ */
+Route::get('/category/{category}', 'User\CategoryController@show');
